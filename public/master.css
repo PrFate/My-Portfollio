@@ -32,6 +32,7 @@ a {
 }
 
 .header__animation {
+    animation: circuit-load 1500ms ease-out;
     margin-top: 1rem;
     width: 100vw;
 }
@@ -41,6 +42,7 @@ a {
     position: relative;
     top: -8rem;
     left: 2rem;
+    animation: big-microchip-load 1500ms ease-out;
 }
 
 .heading--primary {
@@ -49,6 +51,7 @@ a {
     font-size: 7.9rem;
     margin: 5rem 0;
     text-align: center;
+    animation: heading-load 1500ms ease-in-out;
 }
 
 .subheading {
@@ -57,6 +60,9 @@ a {
     color: #9FC5E8;
     margin: 0 auto;
     text-align: center;
+    animation-name: subheading-load;
+    animation-duration: 2000ms;
+    animation-timing-function: ease-in-out;
 }
 
 .progress-bar {
@@ -65,6 +71,7 @@ a {
     transform: translateY(-50%);
     right: 3rem;
     width: 7.8rem;
+    animation: progress-bar-load 1500ms ease-in;
 }
 
 .navbar {
@@ -115,6 +122,14 @@ a {
     flex-direction: column;
     width: 50%;
     margin: 5rem auto;
+}
+
+.skills__section--left {
+    animation: skill-to-the-left 1000ms ease-out;
+}
+
+.skills__section--right {
+    animation: skill-to-the-right 1000ms ease-out;
 }
 
 .my-work {
@@ -185,11 +200,60 @@ a {
     width: 100vw;
 }
 
-@media all and (max-width: 1243px) {
-    .progress-bar {
-        position: fixed;
-        right: 1rem;
-        top: 100%;
-        transform: translateY(-150%);
+/**************************************************** ANIMATIONS ***************/
+@keyframes circuit-load {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
+
+@keyframes heading-load {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    90% {
+        transform: translateY(-10%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subheading-load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes progress-bar-load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes big-microchip-load {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
